@@ -14,7 +14,11 @@ getopts-like option parsing.
 categories = ["command-line-interface"]
 
 [dependencies]
-unicode-width = "0.1.5"
+unicode-width = {version = "0.1.5", git = "https://github.com/crlf0710/unicode-width"}
+std = { version = "1.0.0", optional = true, package = 'rustc-test-workspace-std' }
 
 [dev-dependencies]
 log = "0.4"
+
+[features]
+rustc-dep-of-test = ['std', 'unicode-width/rustc-dep-of-test']
